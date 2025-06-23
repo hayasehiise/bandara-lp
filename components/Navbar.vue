@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-primary text-primary-content shadow-sm z-2">
+  <div class="navbar bg-primary text-primary-content shadow-sm z-50">
     <NavbarBrand />
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
@@ -7,7 +7,9 @@
         <li>
           <details>
             <summary>Portal Informasi</summary>
-            <ul class="bg-base-100 text-base-content rounded-t-none p-2">
+            <ul
+              class="bg-base-100 text-base-content rounded-t-none rounded-b-lg p-2"
+            >
               <li><a>Informasi Umum Bandara</a></li>
               <li><a>Sejarah</a></li>
               <li><a>Tugas dan Fungsi</a></li>
@@ -20,7 +22,9 @@
         <li>
           <details>
             <summary>Portal Informasi</summary>
-            <ul class="bg-base-100 text-base-content rounded-t-none p-2">
+            <ul
+              class="bg-base-100 text-base-content rounded-t-none rounded-b-lg p-2"
+            >
               <li><a>Sistem Manajemen Pengaduan (SIMADU)</a></li>
               <li><a>Permohonan Pas Bandara</a></li>
               <li><a>Permohonan Informasi PPID</a></li>
@@ -30,7 +34,9 @@
         <li>
           <details>
             <summary>Portal Support</summary>
-            <ul class="bg-base-100 text-base-content rounded-t-none p-2">
+            <ul
+              class="bg-base-100 text-base-content rounded-t-none rounded-b-lg p-2"
+            >
               <li><a>Help & Support</a></li>
               <li><a>Kontak</a></li>
               <li><a>Pengaduan Gratifikasi</a></li>

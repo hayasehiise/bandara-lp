@@ -1,5 +1,6 @@
 <template>
   <div class="w-full flex flex-col">
+    <div class="flex flex-col"></div>
     <!-- Ini bagian Hero slider -->
     <div class="flex flex-col">
       <Carousel :items-to-show="1" :wrap-around="true" :autoplay="5000">
@@ -11,7 +12,6 @@
       </Carousel>
     </div>
     <!-- ============================================= -->
-    <div class="flex flex-col"></div>
   </div>
 </template>
 

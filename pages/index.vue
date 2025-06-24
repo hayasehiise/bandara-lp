@@ -1,5 +1,6 @@
 <template>
   <div class="w-full flex flex-col">
+    <!-- Start Hero Section -->
     <div class="relative w-full h-dvh overflow-hidden">
       <!-- Background Image -->
       <div
@@ -34,6 +35,7 @@
         </svg>
       </div>
       <!-- =============================================================================== -->
+      <!-- Hero Headdings -->
       <div
         class="relative z-30 w-full flex flex-row h-dvh justify-center items-center text-center"
       >
@@ -49,8 +51,10 @@
           </h3>
         </div>
       </div>
+      <!-- ========================================================================== -->
     </div>
-    <!-- Ini bagian Section slider -->
+    <!-- End Hero Section -->
+    <!-- Start Section slider -->
     <div class="flex flex-col">
       <Carousel :items-to-show="1" :wrap-around="true" :autoplay="5000">
         <Slide v-for="(image, index) in imageItem" :key="index">
@@ -60,14 +64,81 @@
         </Slide>
       </Carousel>
     </div>
-    <!-- ============================================= -->
+    <!-- End Slider Section -->
+    <!-- Start Informasi Penerbangan Section -->
+    <div
+      class="w-full flex flex-col text-center p-5 gap-3 bg-accent text-accent-content"
+    >
+      <h2 class="font-bold text-5xl">Live Informasi Penerbangan</h2>
+      <h3>
+        Anda dapat melihat informasi live penerbangan melalui link dibawah
+      </h3>
+      <div class="w-full flex flex-col gap-3">
+        <!-- button link arrival dan departure -->
+        <!-- <div class="flex flex-row justify-center gap-3">
+          <a class="btn btn-soft btn-info text-2xl p-8 font-bold" href="http://36.91.63.220/en/display/single/arrival-information-1366/?pagetype=CMS&type=PCTV&addr=13.13.13.13"
+            ><Icon name="streamline-cyber:airplane-arrival" size="2.5rem" />
+            Arrival
+          </a>
+          <a class="btn btn-soft btn-info text-2xl p-8 font-bold" href="http://36.91.63.220/en/display/single/departure-information-1366/?pagetype=PCTV&addr=12.12.12.12"
+            ><Icon name="streamline-cyber:airplane-departure" size="2.5rem" />
+            Departure
+          </a>
+        </div> -->
+        <!-- end button link arrival dan departure -->
+        <!-- button show arrival dan departure -->
+        <div class="flex flex-row justify-center gap-3">
+          <a
+            class="btn btn-soft btn-info text-2xl p-8 font-bold"
+            @click="
+              showArrival = true;
+              showDeparture = false;
+            "
+            ><Icon name="streamline-cyber:airplane-arrival" size="2.5rem" />
+            Arrival
+          </a>
+          <a
+            class="btn btn-soft btn-info text-2xl p-8 font-bold"
+            @click="
+              showDeparture = true;
+              showArrival = false;
+            "
+            ><Icon name="streamline-cyber:airplane-departure" size="2.5rem" />
+            Departure
+          </a>
+        </div>
+        <div v-if="showArrival">
+          <iframe
+            src="http://36.91.63.220/en/display/single/arrival-information-1366/?pagetype=CMS&type=PCTV&addr=13.13.13.13"
+            class="w-full h-dvh"
+          />
+        </div>
+        <div v-if="showDeparture">
+          <iframe
+            src="http://36.91.63.220/en/display/single/departure-information-1366/?pagetype=PCTV&addr=12.12.12.12"
+            class="w-full h-dvh"
+          />
+        </div>
+        <!-- end show arrival dan departure -->
+      </div>
+    </div>
+    <!-- end section informasi penerbangan -->
+    <!-- section info terkini -->
+    <div class="w-full flex flex-col z-30l justify-center">
+      <h2 class="text-5xl font-bold text-info">Info Terkini</h2>
+      <h3>disini nanti berita terbaru</h3>
+    </div>
+    <!-- end section info terkini -->
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
+const showArrival = ref(false);
+const showDeparture = ref(false);
 const imageItem = [
   {
     url: "/image/slider/slider-1.png",

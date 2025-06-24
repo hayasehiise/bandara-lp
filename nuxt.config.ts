@@ -9,6 +9,12 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "id",
       },
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        },
+      ],
     },
   },
   devtools: { enabled: true },
@@ -18,5 +24,5 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ["vue3-carousel-nuxt"],
+  modules: ["vue3-carousel-nuxt", "@nuxt/icon"],
 });

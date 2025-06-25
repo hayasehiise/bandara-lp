@@ -15,6 +15,12 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         },
       ],
+      script: [
+        {
+          src: "//www.instagram.com/embed.js",
+          async: true,
+        },
+      ],
     },
   },
   devtools: { enabled: true },

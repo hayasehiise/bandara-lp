@@ -5,7 +5,7 @@
     <h2 class="font-bold text-5xl">Live Informasi Penerbangan</h2>
     <h3>Anda dapat melihat informasi live penerbangan melalui link dibawah</h3>
     <div class="w-full flex flex-col gap-3">
-      <!-- button link arrival dan departure -->
+      <!-- button link arrival dan departure (Dipakai jika live schedule error load) -->
       <!-- <div class="flex flex-row justify-center gap-3">
           <a class="btn btn-soft btn-info text-2xl p-8 font-bold" href="http://36.91.63.220/en/display/single/arrival-information-1366/?pagetype=CMS&type=PCTV&addr=13.13.13.13"
             ><Icon name="streamline-cyber:airplane-arrival" size="2.5rem" />
@@ -22,7 +22,7 @@
         <a
           class="btn btn-soft btn-info text-2xl p-8 font-bold"
           @click="
-            showArrival = true;
+            showArrival = !showArrival;
             showDeparture = false;
           "
           ><Icon name="streamline-cyber:airplane-arrival" size="2.5rem" />
@@ -31,7 +31,7 @@
         <a
           class="btn btn-soft btn-info text-2xl p-8 font-bold"
           @click="
-            showDeparture = true;
+            showDeparture = !showDeparture;
             showArrival = false;
           "
           ><Icon name="streamline-cyber:airplane-departure" size="2.5rem" />
@@ -50,6 +50,7 @@
           class="w-full h-dvh"
         />
       </div>
+      <!-- end button show arrival & departure -->
     </div>
   </div>
 </template>
